@@ -1,0 +1,12 @@
+{
+    "host": "https://api.us-east.tinybird.co",
+    "id": "561e9581-c62e-4980-8165-a684d7376f38",
+    "name": "demo_casino",
+    "scope": "user",
+    "token": "p.eyJ1IjogIjU2MWU5NTgxLWM2MmUtNDk4MC04MTY1LWE2ODRkNzM3NmYzOCIsICJpZCI6ICI0ODYxMWM4Mi02NzE4LTQ5M2QtYmEyNy1lODRkOWE3YjQ4NWUifQ.JbUaUe7ssVRaPS0_u0Pq-R38aLbXvttK4QkkJXrfRBA",
+    "tokens": {
+        "https://api.us-east.tinybird.co": "p.eyJ1IjogIjU2MWU5NTgxLWM2MmUtNDk4MC04MTY1LWE2ODRkNzM3NmYzOCIsICJpZCI6ICI0ODYxMWM4Mi02NzE4LTQ5M2QtYmEyNy1lODRkOWE3YjQ4NWUifQ.JbUaUe7ssVRaPS0_u0Pq-R38aLbXvttK4QkkJXrfRBA"
+    },
+    "user_email": "david.margulies@tinybird.co",
+    "user_id": "4da2347f-1eca-4983-b775-f801efeb2b14"
+}

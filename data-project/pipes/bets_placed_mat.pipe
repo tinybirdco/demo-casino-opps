@@ -1,0 +1,22 @@
+NODE mv
+SQL >
+
+    SELECT
+        toStartOfMinute(created_at_ts) AS ts,
+        game_id,
+        game_name,
+        countState() AS n_bets,
+        sumSimpleState(bet_amount) AS bet_amount
+    FROM bets_placed_confluent
+    INNER JOIN games USING (game_id)
+    GROUP BY
+        ts,
+        game_id,
+        game_name
+
+TYPE materialized
+DATASOURCE mv_bets_place_by_min
+ENGINE "AggregatingMergeTree"
+ENGINE_PARTITION_KEY "toYYYYMM(ts)"
+ENGINE_SORTING_KEY "ts, game_id, game_name"
+

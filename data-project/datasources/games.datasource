@@ -1,0 +1,7 @@
+
+SCHEMA >
+    `game_id` Int16,
+    `game_name` String
+
+ENGINE "MergeTree"
+ENGINE_SORTING_KEY "game_id, game_name"

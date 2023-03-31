@@ -1,0 +1,12 @@
+# Data Source created from Pipe 'bets_placed_mat'
+
+SCHEMA >
+    `ts` DateTime,
+    `game_id` Int16,
+    `game_name` String,
+    `n_bets` AggregateFunction(count),
+    `bet_amount` SimpleAggregateFunction(sum, Int64)
+
+ENGINE "AggregatingMergeTree"
+ENGINE_PARTITION_KEY "toYYYYMM(ts)"
+ENGINE_SORTING_KEY "ts, game_id, game_name"

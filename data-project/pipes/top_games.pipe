@@ -1,0 +1,19 @@
+TOKEN "top_games_last_hour_endpoint_read_9325" READ
+
+TOKEN "demo_app_token" READ
+
+NODE endpoint
+SQL >
+
+    %
+    SELECT game_name AS name, countMerge(n_bets) AS value FROM mv_bets_place_by_min
+    WHERE
+        ts >= now() - interval {{ Int16(hour_param, 1, description="Hours to go back") }} hour
+        {% if defined(game_param) and game_param != '0' %}
+            AND game_id
+            = {{ Int16(game_param, 1, description="Game ID parameter") }}
+        {% end %}
+    GROUP BY name
+    ORDER BY value desc
+
+

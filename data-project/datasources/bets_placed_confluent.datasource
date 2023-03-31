@@ -1,0 +1,25 @@
+
+SCHEMA >
+    `__value` String,
+    `__topic` LowCardinality(String),
+    `__partition` Int16,
+    `__offset` Int64,
+    `__timestamp` DateTime,
+    `__key` String,
+    `bet_amount` Int16 `json:$.bet_amount`,
+    `bet_id` Int32 `json:$.bet_id`,
+    `created_at_ts` DateTime `json:$.created_at_ts`,
+    `game_id` Int16 `json:$.game_id`,
+    `user_id` Int16 `json:$.user_id`
+
+ENGINE "MergeTree"
+ENGINE_PARTITION_KEY "toYYYYMM(__timestamp)"
+ENGINE_SORTING_KEY "__timestamp"
+
+KAFKA_CONNECTION_NAME 'tb_confluent'
+KAFKA_TOPIC 'demo_casino'
+KAFKA_GROUP_ID 'demo_casino_1671484487892'
+KAFKA_AUTO_OFFSET_RESET 'latest'
+KAFKA_STORE_RAW_VALUE 'False'
+KAFKA_TARGET_PARTITIONS 'auto'
+KAFKA_KEY_AVRO_DESERIALIZATION ''
