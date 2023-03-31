@@ -13,6 +13,8 @@ import {
   Bold
 } from '@tremor/react';
 
+import Head from 'next/head'
+
 import {
   CircleStackIcon,
   CurrencyDollarIcon
@@ -69,6 +71,12 @@ export default function Dashboard() {
   };
   
   return (
+      <>
+      <Head>
+        <title>Live Casino Bets</title>
+        <meta name="description" content="Live Casino Bets" />
+      </Head>
+      
       <main className="bg-slate-50 p-6 sm:p-10">
           
           <Metric>Live Casino Bets</Metric>
@@ -148,5 +156,7 @@ export default function Dashboard() {
           </Grid>
           
       </main>
+
+      </>
   );
 }
