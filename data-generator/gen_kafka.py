@@ -19,8 +19,8 @@ import socket
 @click.option('--bootstrap-servers', default='pkc-l6wr6.europe-west2.gcp.confluent.cloud:9092')
 @click.option('--security_protocol', default='SASL_SSL')
 @click.option('--sasl_mechanism', default='PLAIN')
-@click.option('--sasl_plain_username', default='CK2HOD6MSJ4IHAOY')
-@click.option('--sasl_plain_password', default='O7DaVz93rq73np4sPLh1fsVmqN2VHepJj9dZEt+kLi5Um+zgxcGZWbNbuNlRDY/T')
+@click.option('--sasl_plain_username', default='KEY')
+@click.option('--sasl_plain_password', default='SECRET')
 @click.option('--utc', help='UTC datetime for tmstmp by default', type=bool, default=True)
 @click.option('--bcp', is_flag=True, default=False)
 def produce(topic,
